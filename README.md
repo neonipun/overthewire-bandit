@@ -6,6 +6,10 @@ Link: https://overthewire.org/wargames/bandit/
 
 This is my walkthrough/write-up of how the Bandit Wargame from overthewire.com can be solved.
 
+**SSH Information**     
+Host: bandit.labs.overthewire.org   
+Port: 2220
+
 
 ## Index
 [bandit0](./writeup.md#bandit0)
