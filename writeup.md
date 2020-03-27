@@ -21,7 +21,7 @@ https://overthewire.org/wargames/bandit/bandit0.html
 Here the ``` ssh ``` command should be used to login as the user ``` bandit0 ``` into the specified host and port, followed by the corresponding password.
 
 ```
-ssh 
+ssh bandit0@bandit.labs.overthewire.org -p 2220
 ```
 
 Back to [Index](./README.md##Index).
@@ -168,3 +168,382 @@ Back to [Index](./README.md##Index).
 
 ----------------------------------------------
 
+## [bandit6](https://overthewire.org/wargames/bandit/bandit6.html)
+
+Login with ``` ssh bandit5@bandit.labs.overthewire.org -p 2220 ```
+
+```
+bandit5@bandit:~$ ls
+inhere
+bandit5@bandit:~$ cd inhere/
+bandit5@bandit:~/inhere$ ls
+maybehere00  maybehere02  maybehere04  maybehere06  maybehere08  maybehere10  maybehere12  maybehere14  maybehere16  maybehere18
+maybehere01  maybehere03  maybehere05  maybehere07  maybehere09  maybehere11  maybehere13  maybehere15  maybehere17  maybehere19
+bandit5@bandit:~/inhere$ find . -readable -size 1033c
+./maybehere07/.file2
+bandit5@bandit:~/inhere$ cat ./maybehere07/.file2
+DXjZPULLxYr17uwoI01bNLQbtFemEgo7
+```
+
+Back to [Index](./README.md##Index).
+
+----------------------------------------------
+
+## [bandit7](https://overthewire.org/wargames/bandit/bandit7.html)
+
+Login with ``` ssh bandit6@bandit.labs.overthewire.org -p 2220 ```
+
+
+```
+bandit6@bandit:~$ find / -group bandit6 -user bandit7 -size 33c 2>&1 | grep -v "find:"
+/var/lib/dpkg/info/bandit7.password
+bandit6@bandit:~$ cat /var/lib/dpkg/info/bandit7.password
+HKBPTKQnIay4Fw76bEy8PVxKEDQRKTzs
+```
+
+Back to [Index](./README.md##Index).
+
+----------------------------------------------
+
+## [bandit8](https://overthewire.org/wargames/bandit/bandit8.html)
+
+Login with ``` ssh bandit7@bandit.labs.overthewire.org -p 2220 ```
+
+
+```
+bandit7@bandit:~$ ls
+data.txt
+bandit7@bandit:~$ cat data.txt | grep millionth
+millionth       cvX2JJa4CFALtqS87jk27qwqGhBM9plV
+```
+
+Back to [Index](./README.md##Index).
+
+----------------------------------------------
+
+## [bandit9](https://overthewire.org/wargames/bandit/bandit9.html)
+
+Login with ``` ssh bandit8@bandit.labs.overthewire.org -p 2220 ```
+
+
+```
+bandit8@bandit:~$ ls
+data.txt
+bandit8@bandit:~$ sort data.txt | uniq -c | grep "1 "
+      1 UsvVyFSfZZWbi6wgC7dAFyFuR6jQQUhR
+```
+
+Back to [Index](./README.md##Index).
+
+----------------------------------------------
+
+## [bandit10](https://overthewire.org/wargames/bandit/bandit10.html)
+
+Login with ``` ssh bandit9@bandit.labs.overthewire.org -p 2220 ```
+
+
+```
+bandit9@bandit:~$ strings data.txt | grep ===
+2========== the
+========== password
+========== isa
+========== truKLdjsbJ5g7yyJ2X2R0o3a5HQJFuLk
+```
+
+Back to [Index](./README.md##Index).
+
+----------------------------------------------
+
+## [bandit11](https://overthewire.org/wargames/bandit/bandit11.html)
+
+Login with ``` ssh bandit10@bandit.labs.overthewire.org -p 2220 ```
+
+```
+bandit10@bandit:~$ base64 -d data.txt
+The password is IFukwKGsFW8MOq3IRFqrxE1hxTNEbUPR
+```
+
+Back to [Index](./README.md##Index).
+
+----------------------------------------------
+
+## [bandit12](https://overthewire.org/wargames/bandit/bandit12.html)
+
+Login with ``` ssh bandit11@bandit.labs.overthewire.org -p 2220 ```
+
+```
+bandit11@bandit:~$ bandit11@bandit:~$ cat data.txt | tr 'A-Za-z' 'N-ZA-Mn-za-m'
+The password is 5Te8Y4drgCRfCx8ugdwuEX8KFC6k2EUu
+```
+
+Back to [Index](./README.md##Index).
+
+----------------------------------------------
+
+## [bandit13](https://overthewire.org/wargames/bandit/bandit13.html)
+
+Login with ``` ssh bandit12@bandit.labs.overthewire.org -p 2220 ```
+gzip, bzip2, tar
+
+```
+
+```
+
+Back to [Index](./README.md##Index).
+
+----------------------------------------------
+
+## [bandit14](https://overthewire.org/wargames/bandit/bandit14.html)
+
+Login with ``` ssh bandit13@bandit.labs.overthewire.org -p 2220 ```
+
+```
+
+```
+
+Back to [Index](./README.md##Index).
+
+----------------------------------------------
+
+## [bandit15](https://overthewire.org/wargames/bandit/bandit15.html)
+
+Login with ``` ssh bandit14@bandit.labs.overthewire.org -p 2220 ```
+
+```
+bandit14@bandit:~$ nc localhost 30000
+4wcYUJFw0k0XLShlDzztnTBHiqxU3b3e
+Correct!
+BfMYroe26WYalil77FoDi9qh59eK5xNr
+```
+
+Back to [Index](./README.md##Index).
+
+----------------------------------------------
+                        
+## [bandit16](https://overthewire.org/wargames/bandit/bandit16.html)
+
+Login with ``` ssh bandit15@bandit.labs.overthewire.org -p 2220 ```
+
+```
+to be written
+```
+
+Back to [Index](./README.md##Index).
+
+----------------------------------------------
+                        
+## [bandit17](https://overthewire.org/wargames/bandit/bandit17.html)
+
+Login with ``` ssh bandit16@bandit.labs.overthewire.org -p 2220 ```
+
+```
+to be written
+```
+
+Back to [Index](./README.md##Index).
+
+----------------------------------------------
+                        
+## [bandit18](https://overthewire.org/wargames/bandit/bandit18.html)
+
+Login with ``` ssh bandit17@bandit.labs.overthewire.org -p 2220 ```
+
+```
+to be written
+```
+
+Back to [Index](./README.md##Index).
+
+----------------------------------------------
+                        
+## [bandit19](https://overthewire.org/wargames/bandit/bandit19.html)
+
+Login with ``` ssh bandit18@bandit.labs.overthewire.org -p 2220 ```
+
+```
+to be written
+```
+
+Back to [Index](./README.md##Index).
+
+----------------------------------------------
+                        
+## [bandit20](https://overthewire.org/wargames/bandit/bandit20.html)
+
+Login with ``` ssh bandit19@bandit.labs.overthewire.org -p 2220 ```
+
+```
+to be written
+```
+
+Back to [Index](./README.md##Index).
+
+----------------------------------------------
+                        
+## [bandit21](https://overthewire.org/wargames/bandit/bandit21.html)
+
+Login with ``` ssh bandit20@bandit.labs.overthewire.org -p 2220 ```
+
+```
+to be written
+```
+
+Back to [Index](./README.md##Index).
+
+----------------------------------------------
+                        
+## [bandit22](https://overthewire.org/wargames/bandit/bandit22.html)
+
+Login with ``` ssh bandit21@bandit.labs.overthewire.org -p 2220 ```
+
+```
+to be written
+```
+
+Back to [Index](./README.md##Index).
+
+----------------------------------------------
+                        
+## [bandit23](https://overthewire.org/wargames/bandit/bandit23.html)
+
+Login with ``` ssh bandit22@bandit.labs.overthewire.org -p 2220 ```
+
+```
+to be written
+```
+
+Back to [Index](./README.md##Index).
+
+----------------------------------------------
+                        
+## [bandit24](https://overthewire.org/wargames/bandit/bandit24.html)
+
+Login with ``` ssh bandit23@bandit.labs.overthewire.org -p 2220 ```
+
+```
+to be written
+```
+
+Back to [Index](./README.md##Index).
+
+----------------------------------------------
+                        
+## [bandit25](https://overthewire.org/wargames/bandit/bandit25.html)
+
+Login with ``` ssh bandit24@bandit.labs.overthewire.org -p 2220 ```
+
+```
+to be written
+```
+
+Back to [Index](./README.md##Index).
+
+----------------------------------------------
+                        
+## [bandit26](https://overthewire.org/wargames/bandit/bandit26.html)
+
+Login with ``` ssh bandit25@bandit.labs.overthewire.org -p 2220 ```
+
+```
+to be written
+```
+
+Back to [Index](./README.md##Index).
+
+----------------------------------------------
+                        
+## [bandit27](https://overthewire.org/wargames/bandit/bandit27.html)
+
+Login with ``` ssh bandit26@bandit.labs.overthewire.org -p 2220 ```
+
+```
+to be written
+```
+
+Back to [Index](./README.md##Index).
+
+----------------------------------------------
+                        
+## [bandit28](https://overthewire.org/wargames/bandit/bandit28.html)
+
+Login with ``` ssh bandit27@bandit.labs.overthewire.org -p 2220 ```
+
+```
+to be written
+```
+
+Back to [Index](./README.md##Index).
+
+----------------------------------------------
+                        
+## [bandit29](https://overthewire.org/wargames/bandit/bandit29.html)
+
+Login with ``` ssh bandit28@bandit.labs.overthewire.org -p 2220 ```
+
+```
+to be written
+```
+
+Back to [Index](./README.md##Index).
+
+----------------------------------------------
+                        
+## [bandit30](https://overthewire.org/wargames/bandit/bandit30.html)
+
+Login with ``` ssh bandit29@bandit.labs.overthewire.org -p 2220 ```
+
+```
+to be written
+```
+
+Back to [Index](./README.md##Index).
+
+----------------------------------------------
+                        
+## [bandit31](https://overthewire.org/wargames/bandit/bandit31.html)
+
+Login with ``` ssh bandit30@bandit.labs.overthewire.org -p 2220 ```
+
+```
+to be written
+```
+
+Back to [Index](./README.md##Index).
+
+----------------------------------------------
+                        
+## [bandit32](https://overthewire.org/wargames/bandit/bandit32.html)
+
+Login with ``` ssh bandit31@bandit.labs.overthewire.org -p 2220 ```
+
+```
+to be written
+```
+
+Back to [Index](./README.md##Index).
+
+----------------------------------------------
+                        
+## [bandit33](https://overthewire.org/wargames/bandit/bandit33.html)
+
+Login with ``` ssh bandit32@bandit.labs.overthewire.org -p 2220 ```
+
+```
+to be written
+```
+
+Back to [Index](./README.md##Index).
+
+----------------------------------------------
+                        
+## [bandit34](https://overthewire.org/wargames/bandit/bandit34.html)
+
+Login with ``` ssh bandit33@bandit.labs.overthewire.org -p 2220 ```
+
+```
+to be written
+```
+
+Back to [Index](./README.md##Index).
+
+----------------------------------------------
