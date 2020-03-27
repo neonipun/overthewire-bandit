@@ -18,7 +18,7 @@ Port: 2220
 https://overthewire.org/wargames/bandit/bandit0.html
 > "The goal of this level is for you to log into the g    ame using SSH. The host to which you need to connect is bandit.labs.overthewire.org, on port 2220. The username is bandit0 and the password is bandit0. Once logged in, go to the Level 1 page to find out how to beat Level 1."
 
-Here the ``` ssh ``` command shold be used to login as the user ``` bandit0 ``` into the specified host and port, followed by the corresponding password.
+Here the ``` ssh ``` command should be used to login as the user ``` bandit0 ``` into the specified host and port, followed by the corresponding password.
 
 ```
 ssh 
@@ -32,7 +32,7 @@ Back to [Index](./README.md##Index).
 
 Login with ``` ssh bandit0@bandit.labs.overthewire.org -p 2220 ```
 
-Perform a the ``` cat ``` command on the file ``` readme ```, the file contains the password to the next level. To check out all files or dirctories present in the current working directory use ``` ls ```. 
+Perform a the ``` cat ``` command on the file ``` readme ```, the file contains the password to the next level. To check out all files or directories present in the current working directory use ``` ls ```. 
 
 ```
 bandit0@bandit:~$ ls
@@ -64,7 +64,7 @@ As recommended [here](https://overthewire.org/wargames/bandit/bandit2.html), a q
 
 The main takeaway would be that the dash '-' specifies an option to be set to a linux command in the bash shell, but doesn't have any special meaning to the Unix/Linux kernel. This makes it okay to name a file with just '-', or even start with it. Also, '-' for ``` cat ``` is taken as a stdin/stdout, making it wait for user input. (https://unix.stackexchange.com/questions/16357/usage-of-dash-in-place-of-a-filename)
 
-To work around this, using the absolute or relative path to '-' will work.
+To work around this, using the absolute or relative path to '-' will do.
 ```
 bandit1@bandit:~$ bandit1@bandit:~$ cat ./-
 CV1DtqXWVFXTvM2F0k09SHz0YwRINYA9
@@ -117,6 +117,7 @@ pIwrPrtPN36QITSp3EQaw936yaFoFgAB
 ```
 
 Here ```.``` represents the current directory and ```..``` represents the parent directory.
+
 Back to [Index](./README.md##Index).
 
 ----------------------------------------------
@@ -142,7 +143,7 @@ bandit4@bandit:~/inhere$ file ./-file01
 ```
 
 Now again, doing it for each and every file is very inefficient. 
-Here the Linux wildcard character asterisk (*) would be usefule to use. It matches one or more occurrences of any character, including no character. So, using it to match all file names to check with ``` file ``` would help.
+Here the Linux wildcard character asterisk (*) would be useful. It matches one or more occurrences of any character, including no character. So, using it to match all file names to check with ``` file ``` would help.
 ```
 bandit4@bandit:~/inhere$ file ./*
 ./-file00: data
