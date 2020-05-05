@@ -172,6 +172,8 @@ Back to [Index](./README.md##Index).
 
 Login with ``` ssh bandit5@bandit.labs.overthewire.org -p 2220 ```
 
+Looking at the description of this level, it would be very useful to lookup how the ```file``` command and its related options work. Finding the right options that sort out the file with the required constraints should do the trick, which is as follows:
+
 ```
 bandit5@bandit:~$ ls
 inhere
