@@ -172,7 +172,7 @@ Back to [Index](./README.md##Index).
 
 Login with ``` ssh bandit5@bandit.labs.overthewire.org -p 2220 ```
 
-Looking at the description of this level, it would be very useful to lookup how the ```file``` command and its related options work. Finding the right options that sort out the file with the required constraints should do the trick, which is as follows:
+Looking at the description of this level, it would be very useful to lookup how the ```find``` command and its related options work. Finding the right options that sorts out the file with the required constraints should do the trick, which is as follows:
 
 ```
 bandit5@bandit:~$ ls
@@ -195,9 +195,53 @@ Back to [Index](./README.md##Index).
 
 Login with ``` ssh bandit6@bandit.labs.overthewire.org -p 2220 ```
 
+This requires a similar thought process to what [bandit6](./writeup.md##bandit6) required, but this time we search from the root directory - ```/```
+
+The following options along with their respective value according to the constraints are given to ```find``` as follows:
 
 ```
-bandit6@bandit:~$ find / -group bandit6 -user bandit7 -size 33c 2>&1 | grep -v "find:"
+bandit6@bandit:~$ bandit6@bandit:~$ find / -group bandit6 -user bandit7 -size 33c
+find: ‘/root’: Permission denied
+find: ‘/home/bandit28-git’: Permission denied
+find: ‘/home/bandit30-git’: Permission denied
+find: ‘/home/bandit5/inhere’: Permission denied
+find: ‘/home/bandit27-git’: Permission denied
+find: ‘/home/bandit29-git’: Permission denied
+find: ‘/home/bandit31-git’: Permission denied
+find: ‘/lost+found’: Permission denied
+find: ‘/etc/ssl/private’: Permission denied
+find: ‘/etc/polkit-1/localauthority’: Permission denied
+find: ‘/etc/lvm/archive’: Permission denied
+find: ‘/etc/lvm/backup’: Permission denied
+find: ‘/sys/fs/pstore’: Permission denied
+find: ‘/proc/tty/driver’: Permission denied
+find: ‘/proc/7485/task/7485/fd/6’: No such file or directory
+find: ‘/proc/7485/task/7485/fdinfo/6’: No such file or directory
+find: ‘/proc/7485/fd/5’: No such file or directory
+find: ‘/proc/7485/fdinfo/5’: No such file or directory
+find: ‘/cgroup2/csessions’: Permission denied
+find: ‘/boot/lost+found’: Permission denied
+find: ‘/tmp’: Permission denied
+find: ‘/run/lvm’: Permission denied
+find: ‘/run/screen/S-bandit20’: Permission denied
+find: ‘/run/screen/S-bandit23’: Permission denied
+find: ‘/run/shm’: Permission denied
+find: ‘/run/lock/lvm’: Permission denied
+find: ‘/var/spool/bandit24’: Permission denied
+find: ‘/var/spool/cron/crontabs’: Permission denied
+find: ‘/var/spool/rsyslog’: Permission denied
+find: ‘/var/tmp’: Permission denied
+find: ‘/var/lib/apt/lists/partial’: Permission denied
+find: ‘/var/lib/polkit-1’: Permission denied
+/var/lib/dpkg/info/bandit7.password
+find: ‘/var/log’: Permission denied
+find: ‘/var/cache/apt/archives/partial’: Permission denied
+find: ‘/var/cache/ldconfig’: Permission denied
+```
+Now, in since we cant search through all the directories in the file system due to lack of permissions, we do have our resultant file in that output. To extract that, an inverse search with the string ```"find:"``` on the piped output with the ```grep``` command should work. ```v``` is the ```grep``` command option to do a sort of negation on the pattern match, i.e. inverse search.
+
+```
+bandit6@bandit:~$ find / -group bandit6 -user bandit7 -size 33c | grep -v "find:"
 /var/lib/dpkg/info/bandit7.password
 bandit6@bandit:~$ cat /var/lib/dpkg/info/bandit7.password
 HKBPTKQnIay4Fw76bEy8PVxKEDQRKTzs
