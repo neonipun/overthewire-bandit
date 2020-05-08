@@ -255,6 +255,7 @@ Back to [Index](./README.md##Index).
 
 Login with ``` ssh bandit7@bandit.labs.overthewire.org -p 2220 ```
 
+This a simple pipe - ```|``` and ```grep``` on **data.txt**, with the search pattern being the string "_millionth_".
 
 ```
 bandit7@bandit:~$ ls
