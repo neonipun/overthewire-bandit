@@ -272,6 +272,11 @@ Back to [Index](./README.md##Index).
 
 Login with ``` ssh bandit8@bandit.labs.overthewire.org -p 2220 ```
 
+A quick ```cat``` on **data.txt** gives out a lost of potential possible passwords for the next level. This does seem like a combo of commands and piping will be useful. 
+
+Referring to the "Commands you may need to solve this level" section on the webpage, I checked out the ```man``` pages of ```sort``` and ```uniq```. 
+
+```uniq``` has an option ```c``` which gives the count of a particular unique line in the given data if they are contiguous. The ```sort``` command helps us make repeated occurances of possible passwords sorted one after the other, i.e. contiguous. So, it has become a matter of piping the sorted data to ```uniq -c``` and then ```grep "1 "```.
 
 ```
 bandit8@bandit:~$ ls
