@@ -293,6 +293,14 @@ Back to [Index](./README.md##Index).
 
 Login with ``` ssh bandit9@bandit.labs.overthewire.org -p 2220 ```
 
+This is what the ```cat``` on **data.txt** gives.
+```
+bandit9@bandit:~$ cat data.txt
+pE 0NNyzb[a}okJ#yf68~"SĬ72z8ϻ0˼5m)LAp=zFv]9DLW
+```
+Here, the string command is what has to be used, and this is what the man page for it say: ```strings - print the strings of printable characters in files.```. Which is pretty much the reason it has to be used for this level.
+
+After looking at the the output from ```strings``` on **data.txt** the password for the next level is in the line that has ```===``` in it. So, piping that command with a ```grep``` on the string pattern should give us a clear view of the password.
 
 ```
 bandit9@bandit:~$ strings data.txt | grep ===
