@@ -318,6 +318,10 @@ Back to [Index](./README.md##Index).
 
 Login with ``` ssh bandit10@bandit.labs.overthewire.org -p 2220 ```
 
+Since the content in **data.txt** is base64 encoded we should use the command ```base64``` with the option ```-d``` to decode it.
+
+Base64 is a way to encode binary data into an ASCII character set known to pretty much every computer system, in order to transmit the data without loss or modification of the contents itself. [reference](https://stackoverflow.com/questions/10315757/what-is-the-real-purpose-of-base64-encoding)
+
 ```
 bandit10@bandit:~$ base64 -d data.txt
 The password is IFukwKGsFW8MOq3IRFqrxE1hxTNEbUPR
@@ -330,6 +334,12 @@ Back to [Index](./README.md##Index).
 ## [bandit12](https://overthewire.org/wargames/bandit/bandit12.html)
 
 Login with ``` ssh bandit11@bandit.labs.overthewire.org -p 2220 ```
+
+Looking at the commands that might help section in the description of this level, I see the ```tr``` command. This automatically made me think it was a translation commands keeping in context the level's goal, since lower and uppercase letters need to be rotated/translated by 13 positions. 
+
+Looking up the ```man``` page for ```tr``` tells us that's exactly what it does. It takes in sets of characters that are to be translated, which in our case means rotating the alphabet by 13 positions. 
+
+Piping the file's content to ```tr``` with appropriate sets that map to ROT13 translation of the aplhabet should give us the password to the next level.
 
 ```
 bandit11@bandit:~$ bandit11@bandit:~$ cat data.txt | tr 'A-Za-z' 'N-ZA-Mn-za-m'
